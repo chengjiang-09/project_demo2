@@ -3,6 +3,7 @@ import App from './App.vue';
 import { setupAssets } from './plugins';
 import { setupRouter } from './router'
 import { setupCommonComponents } from './components'
+import {setupStore } from './store'
 
 async function setupApp() {
 
@@ -13,6 +14,9 @@ async function setupApp() {
 
   //注册路由
   setupRouter(app)
+
+  //注册store
+  setupStore(app)
 
   //全局导入公用组件
   setupCommonComponents(app)

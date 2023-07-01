@@ -26,103 +26,13 @@
     
 <script setup lang='ts'>
 import { toReactive } from '@vueuse/core';
-import { getAssetsFile } from '@/utils'
-//左侧盒子
-interface Title {
-    text: string | number | symbol,
-    path: string
-}
-interface LeftData extends Title { }
-interface LeftItems {
-    title: Title,
-    datas: Array<LeftData>
-}
-//右侧盒子
-interface RightData {
-    imgPath: string,
-    path: string
-}
+import { detilProps } from '@/components/common/index'
 
-//props
-interface Props {
-    leftItems?: Array<LeftItems>,
-    rightItems?: Array<RightData>
-}
+//动态引入类型定义
+const props = defineProps(detilProps)
 
-const props = withDefaults(defineProps<Props>(), {
-    leftItems() {
-        return [
-            {
-                title: {
-                    text: "标题",
-                    path: ""
-                },
-                datas: [
-                    {
-                        text: "标题",
-                        path: ""
-                    }, {
-                        text: "标题",
-                        path: ""
-                    }, {
-                        text: "标题",
-                        path: ""
-                    }, {
-                        text: "标题",
-                        path: ""
-                    }, {
-                        text: "标题",
-                        path: ""
-                    }, {
-                        text: "标题",
-                        path: ""
-                    },
-                ]
-            }, {
-                title: {
-                    text: "标题",
-                    path: ""
-                },
-                datas: [
-                    {
-                        text: "标题",
-                        path: ""
-                    }, {
-                        text: "标题",
-                        path: ""
-                    }, {
-                        text: "标题",
-                        path: ""
-                    }, {
-                        text: "标题",
-                        path: ""
-                    }, {
-                        text: "标题",
-                        path: ""
-                    }, {
-                        text: "标题",
-                        path: ""
-                    },
-                ]
-            },
-        ]
-    },
-    rightItems() {
-        return [
-            {
-                path: "",
-                imgPath: getAssetsFile("2021041613334312.png")
-            },
-            {
-                path: "",
-                imgPath: getAssetsFile("2021041613334312.png")
-            }
-        ]
-    },
-})
-
-const leftItems = toReactive(props.leftItems)
-const rightItems = toReactive(props.rightItems)
+const leftItems = toReactive(props.leftItems ? props.leftItems : [])
+const rightItems = toReactive(props.rightItems ? props.rightItems : [])
 </script>
     
 <style lang="less" scoped>
