@@ -4,7 +4,7 @@
             <div class="title" :style="{ height: `${height}px` }">
                 <div class="title-text" :style="{ fontSize: `${fontSizeMain}px` }">{{ title }}</div>
                 <div class="title-click" :class="[{ on: action }]" @click="changeStatus"
-                    v-if="(!path || detils.length > 0)"></div>
+                    :style="{ width: `${fontSizeIcon}px` }" v-if="(!path || detils.length > 0)"></div>
             </div>
             <div class="detil" v-if="!path" :style="[{ height: `${newHeight}px` }]">
                 <div class="detil-text" ref="detilText">
@@ -30,6 +30,7 @@ const detils = toRef(props, 'detils')
 const height = toRef(props, 'height')
 const action = toRef(props, 'action')
 const id = toRef(props, 'id')
+const fontSizeIcon = toRef(props, 'fontSizeIcon')
 
 
 const emits = defineEmits(['changeStatus'])
@@ -82,6 +83,7 @@ watch(() => action.value, (newVelue) => {
                 background-image: url('../../../assets/img/nav_icon1.png');
                 background-repeat: no-repeat;
                 background-position: center;
+                background-size: 100%;
                 cursor: pointer;
             }
 

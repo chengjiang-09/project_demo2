@@ -22,6 +22,7 @@ export function setupCommonComponents(app: App) {
 }
 
 type Text = string | number | symbol;
+type TextCommon = number | string;
 
 //detilProps
 //detil组件左侧盒子
@@ -57,12 +58,12 @@ export type DetilProps = ExtractPropTypes<typeof detilProps>;
 type Active = Boolean | String | undefined;
 export const commonNavItemProps = {
   baseTitle: {
-    type: String as PropType<Text>,
+    type: [String, Number] as PropType<Text>,
     require: false,
     default: '标题',
   },
   path: {
-    type: String as PropType<string>,
+    type: [String, Number] as PropType<string>,
     require: false,
     default: '/',
   },
@@ -96,22 +97,27 @@ interface ExpansionBarDetil {
 }
 export const expansionBarProps = {
   title: {
-    type: String as PropType<Text>,
+    type: [String, Number] as PropType<Text>,
     require: false,
     default: '标题',
   },
   fontSizeMain: {
-    type: String as PropType<string | number>,
+    type: [String, Number] as PropType<TextCommon>,
     require: false,
     default: '34',
   },
   fontSizeDetil: {
-    type: String as PropType<string | number>,
+    type: [String, Number] as PropType<TextCommon>,
     require: false,
     default: '28',
   },
+  fontSizeIcon: {
+    type: [String, Number] as PropType<TextCommon>,
+    require: false,
+    default: '21',
+  },
   height: {
-    type: String as PropType<string | number>,
+    type: [String, Number] as PropType<TextCommon>,
     require: false,
     default: '110',
   },
@@ -121,7 +127,7 @@ export const expansionBarProps = {
     default: false,
   },
   path: {
-    type: String as PropType<string | undefined>,
+    type: [String, Number] as PropType<string | undefined>,
     require: false,
     default: undefined,
   },
@@ -131,9 +137,11 @@ export const expansionBarProps = {
     default: [],
   },
   id: {
-    type: String as PropType<string | number>,
+    type: String as PropType<TextCommon>,
     require: false,
     default: '',
-  }
+  },
 };
 export type ExpansionBarProps = ExtractPropTypes<typeof expansionBarProps>;
+
+export * from './components';

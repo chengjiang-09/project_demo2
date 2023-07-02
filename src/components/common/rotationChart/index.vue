@@ -1,6 +1,7 @@
 <template>
     <div class="rotation-chart">
         <div class="container ">
+            <open-star v-if="mark"></open-star>
             <n-carousel autoplay>
                 <img v-for="(path, index) in carousel" :key="index" class="carousel-img" :src="path">
             </n-carousel>
@@ -12,11 +13,13 @@
 import { toReactive } from '@vueuse/core';
 
 interface Props {
-    carousel?: Array<string>
+    carousel?: Array<string>,
+    mark?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-    carousel: () => []
+    carousel: () => [],
+    mark:false
 })
 
 const carousel = toReactive(props.carousel)
@@ -28,6 +31,8 @@ const carousel = toReactive(props.carousel)
 
     .container {
         width: 100%;
+        position: relative;
+        overflow: hidden;
 
         .carousel-img {
             width: 100%;

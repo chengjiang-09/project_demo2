@@ -1,0 +1,17 @@
+<svg width="500" height="300">
+    <defs>
+        <filter id="filter-ripple">
+            <feImage result="pict2" xlink:href="../img/water.png" x="50" y="50" width="200"
+                height="120">
+
+            </feImage>
+            <feDisplacementMap result="partImg" scale="20" color-interpolation-filters="sRGB"
+                xChannelSelector="R" yChannelSelector="R" in="SourceGraphic" in2="pict2">
+
+            </feDisplacementMap>
+        </filter>
+    </defs>
+    <image xlink:href="../img/fj.png" x="0" y="0" width="500" height="300"
+        style="filter:url(#filter-ripple)">
+    </image>
+</svg> 

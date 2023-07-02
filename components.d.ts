@@ -7,12 +7,18 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    BorderRotate: typeof import('./src/components/animation/borderRotate/index.vue')['default']
+    CommonButton: typeof import('./src/components/common/components/commonButton/index.vue')['default']
     CommonNavItem: typeof import('./src/components/common/commonNavItem/index.vue')['default']
     CommonNavItemDetil: typeof import('./src/components/common/commonNavItemDetil/index.vue')['default']
     DemoSearch: typeof import('./src/components/common/demoSearch/index.vue')['default']
     EjectCard: typeof import('./src/components/common/ejectCard/index.vue')['default']
     ExpansionBar: typeof import('./src/components/common/expansionBar/index.vue')['default']
+    FloatFish: typeof import('./src/components/animation/floatFish/index.vue')['default']
     NCarousel: typeof import('naive-ui')['NCarousel']
+    OpenImg: typeof import('./src/components/animation/openImg/index.vue')['default']
+    OpenStar: typeof import('./src/components/animation/openStar/index.vue')['default']
+    ProductDisplay: typeof import('./src/components/common/productDisplay/index.vue')['default']
     RotationChart: typeof import('./src/components/common/rotationChart/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

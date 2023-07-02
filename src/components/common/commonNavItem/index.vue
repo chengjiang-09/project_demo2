@@ -26,6 +26,7 @@ defineOptions({
 import { onMounted, onUnmounted, ref, toRef } from 'vue';
 import { commonNavItemProps } from '@/components/common/index'
 import { useRouter } from 'vue-router'
+import { useHomeStore } from '@/store';
 
 //引入运行时类型定义声明
 const props = defineProps(commonNavItemProps)
@@ -75,9 +76,11 @@ onUnmounted(() => {
 
 //点击路由时的跳转
 const router = useRouter()
+const homeStore = useHomeStore()
 
 function pathPush() {
     if (path.value) {
+        homeStore.setTargetView(path.value)
         router.push({
             path: path.value
         })

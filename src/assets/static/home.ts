@@ -4,14 +4,15 @@ import { getAssetsFile } from '@/utils';
 export const titleNav: TitleNav = [
   {
     navItem: {
-      baseTitle: '标题',
+      baseTitle: '明星榜单',
       outBodyActived: false,
+      path: '/star',
     },
     itemDatas: { leftItems: [], rightItems: [] },
   },
   {
     navItem: {
-      baseTitle: '标题',
+      baseTitle: '护肤',
       outBodyActived: true,
     },
     itemDatas: {
@@ -24,27 +25,27 @@ export const titleNav: TitleNav = [
           datas: [
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
           ],
         },
@@ -56,27 +57,27 @@ export const titleNav: TitleNav = [
           datas: [
             {
               text: '标题',
-              path: '',
+              path: '/classify/2',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/2',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/2',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/2',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/2',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/2',
             },
           ],
         },
@@ -95,7 +96,7 @@ export const titleNav: TitleNav = [
   },
   {
     navItem: {
-      baseTitle: '标题',
+      baseTitle: '面膜',
       outBodyActived: true,
     },
     itemDatas: {
@@ -108,27 +109,27 @@ export const titleNav: TitleNav = [
           datas: [
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
           ],
         },
@@ -140,27 +141,27 @@ export const titleNav: TitleNav = [
           datas: [
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
           ],
         },
@@ -179,7 +180,7 @@ export const titleNav: TitleNav = [
   },
   {
     navItem: {
-      baseTitle: '标题',
+      baseTitle: '彩妆',
       outBodyActived: true,
     },
     itemDatas: {
@@ -192,27 +193,27 @@ export const titleNav: TitleNav = [
           datas: [
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
           ],
         },
@@ -224,27 +225,27 @@ export const titleNav: TitleNav = [
           datas: [
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
             {
               text: '标题',
-              path: '',
+              path: '/classify/1',
             },
           ],
         },
@@ -263,7 +264,7 @@ export const titleNav: TitleNav = [
   },
   {
     navItem: {
-      baseTitle: '标题',
+      baseTitle: '美护',
       outBodyActived: false,
     },
     itemDatas: {
@@ -273,21 +274,13 @@ export const titleNav: TitleNav = [
   },
   {
     navItem: {
-      baseTitle: '标题',
-      outBodyActived: true,
+      baseTitle: '品牌介绍',
+      outBodyActived: false,
+      path: '/brand',
     },
     itemDatas: {
       leftItems: [],
-      rightItems: [
-        {
-          path: '',
-          imgPath: getAssetsFile('2021041613334312.png'),
-        },
-        {
-          path: '',
-          imgPath: getAssetsFile('2021041613334312.png'),
-        },
-      ],
+      rightItems: [],
     },
   },
 ];
@@ -342,7 +335,7 @@ export const titleNavM: TitleNavM = [
   {
     navItem: {
       id: '',
-      title: '护肤2',
+      title: '护肤3',
       detils: [
         {
           title: '护肤品2',
@@ -358,7 +351,7 @@ export const titleNavM: TitleNavM = [
   {
     navItem: {
       id: '',
-      title: '护肤2',
+      title: '护肤4',
       detils: [
         {
           title: '护肤品2',
@@ -374,7 +367,7 @@ export const titleNavM: TitleNavM = [
   {
     navItem: {
       id: '',
-      title: '护肤2',
+      title: '护肤5',
       detils: [
         {
           title: '护肤品2',
@@ -424,4 +417,13 @@ export const carousel: Array<string> = [
   getAssetsFile('project/20221228155745342.jpg'),
   getAssetsFile('project/20210401130851145.jpeg'),
   getAssetsFile('project/20221228155745342.jpg'),
+];
+
+export const carouselM: Array<string> = [
+  getAssetsFile('project/2022022513195237.jpg'),
+  getAssetsFile('project/20220114164803837.jpg'),
+  getAssetsFile('project/2022022513195237.jpg'),
+  getAssetsFile('project/20220114164803837.jpg'),
+  getAssetsFile('project/2022022513195237.jpg'),
+  getAssetsFile('project/20220114164803837.jpg'),
 ];

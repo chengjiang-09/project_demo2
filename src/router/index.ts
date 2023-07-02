@@ -9,6 +9,38 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'Root'
     }
+  },
+  {
+    name: 'star',
+    path: '/star',
+    component:() => import('@/views/starList/index.vue'),
+    meta: {
+      title: 'star'
+    }
+  },
+  {
+    name: 'classify',
+    path: '/classify/:id',
+    component:() => import('@/views/classify/index.vue'),
+    meta: {
+      title: 'classify'
+    }
+  },
+  {
+    name: 'brand',
+    path: '/brand',
+    component:() => import('@/views/brand/index.vue'),
+    meta: {
+      title: 'brand'
+    }
+  },
+  {
+    name: 'product',
+    path: '/classify/:id/product/:pid',
+    component:() => import('@/views/product/index.vue'),
+    meta: {
+      title: 'product'
+    }
   }
 ]
 

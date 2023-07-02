@@ -75,6 +75,9 @@ function changeAction(index) {
 function clearChange() {
     const titleNav = homeStore.titleNav.map(obj => {
         obj.active = false
+        if(obj.navItem.path && homeStore.targetView === obj.navItem.path){
+            obj.active = true
+        }
         return obj
     })
 
@@ -207,7 +210,7 @@ watch(() => appStore.searchOpend, (newValue) => {
             }
 
             .search-box {
-                z-index: 1;
+                z-index: 3;
 
                 .card-box {
                     width: 89%;
