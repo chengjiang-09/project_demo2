@@ -41,6 +41,14 @@ const routes: Array<RouteRecordRaw> = [
     meta: {
       title: 'product'
     }
+  },
+  {
+    name: 'washCare',
+    path: '/washCare',
+    component:() => import('@/views/washCare/index.vue'),
+    meta: {
+      title: 'washCare'
+    }
   }
 ]
 

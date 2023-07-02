@@ -7,7 +7,7 @@
             </header>
             <div class="body">
                 <div class="body-container">
-                    <div class="first">
+                    <div class="first" ref="first">
                         <div class="left">
                             <ul class="img-list" ref="imgList">
                                 <li v-for="img in imgs" :key="img" :style="{ height: `${imgHeight}px` }">
@@ -56,7 +56,70 @@
                             </div>
                         </div>
                     </div>
-                    <div class="second"></div>
+                    <div class="first-m">
+                        <rotation-chart :carousel="imgs"></rotation-chart>
+                        <div class="bottom">
+                            <p class="main">珀莱雅红宝石淡纹紧致精华2.0</p>
+                            <p class="no-main">抗皱标杆 全新升级 攻守兼备 动静皆无纹</p>
+                            <div class="main-img">
+                                <div class="one" v-for="num in 3" :key="num">
+                                    <div class="rotate">
+                                        <border-rotate :external-adaptation="true"></border-rotate>
+                                    </div>
+                                    <p>双效六胜肽-1</p>
+                                </div>
+                            </div>
+                            <div class="lv">
+                                <div class="img">
+                                    <img src="../../assets/img/product/xinx5.png" alt="">
+                                </div>
+                                <div class="content">5.0</div>
+                            </div>
+                            <div class="specifications">
+                                <span>规格：</span>
+                                <span>30ml</span>
+                            </div>
+                            <div class="price">
+                                <span>价格：</span>
+                                <span>¥350.00</span>
+                            </div>
+                            <div class="bottom-button">
+                                <common-button title="点击购买"></common-button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="second">
+                        <div class="second-container">
+                            <div class="info-title">产品说明</div>
+                            <div class="info">
+                                <p class="main">「红宝石精华」2.0</p>
+                                <p class="main">抗皱标杆 重磅升级</p>
+                                <p>1、功效升级：</p>
+                                <p>黄金抗皱「胜A」CP 双重升级</p>
+                                <p>20%进阶双效六胜肽溶液，直击动态纹</p>
+                                <p>1%超分子维A醇，对抗静态纹</p>
+                                <p>温和兼高效，提升抗皱力</p>
+                                <p>1、功效升级：</p>
+                                <p>黄金抗皱「胜A」CP 双重升级</p>
+                                <p>20%进阶双效六胜肽溶液，直击动态纹</p>
+                                <p>1%超分子维A醇，对抗静态纹</p>
+                                <p>温和兼高效，提升抗皱力</p>
+                            </div>
+                            <div class="info-title">使用方法</div>
+                            <div class="info">
+                                <p>使用时，旋转泵头至开启位置后，轻按泵头，取适量精华液均匀涂抹于脸上。</p>
+                                <p>按摩手法：1.双手轻抚纤紧下颌线：手掌托住下巴，沿下颌线向上提拉至耳根</p>
+                                <p>2.V型轻夹饱满苹果肌：食指与中指微张成V型于脸颊处轻夹3次</p>
+                                <p>3.O型轻推淡褪法令纹：双手O型向上延伸至太阳穴，用指腹按摩太阳穴，结束后沿脸颊向下</p>
+                            </div>
+                            <div class="info-title">建议搭配</div>
+                            <div class="other">
+                                <div class="one" v-for="num in 3" :key="num">
+                                    <product-display></product-display>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <footer>
@@ -73,7 +136,6 @@ import HomeFooter from '@/layouts/home/homeFooter/index.vue';
 import { getAssetsFile } from '@/utils'
 import { toReactive } from '@vueuse/core';
 import { onMounted, ref } from 'vue';
-
 interface Props {
     imgs?: Array<string>
 }
@@ -92,6 +154,7 @@ const imgs = toReactive(props.imgs)
 
 const imgList = ref<HTMLElement>()
 const header = ref<HTMLElement>()
+
 const imgHeight = ref<number>(0)
 const imgMiniHeight = ref<number>(0)
 const imgMiniTop = ref<number>(0)
@@ -100,6 +163,8 @@ const mainTop = ref<number>(0)
 
 const actionMiniIndex = ref<number>(1)
 const startScrollTop = ref<number>(1)
+
+const isDisplayNone = ref<boolean>(false)
 function setImgHeight() {
     if (header.value) {
         imgHeight.value = window.innerHeight - header.value.getBoundingClientRect().height
@@ -110,6 +175,21 @@ function setImgHeight() {
 
     if (imgList.value) {
         imgMiniHeight.value = imgList.value.getBoundingClientRect().left
+    }
+
+    //采用回滚初始值的方式解决pc和移动端切换后滚动图产生的bug
+    var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+    if (viewportWidth <= 1024) {
+        isDisplayNone.value = true
+    }
+
+    if (viewportWidth > 1024 && isDisplayNone.value) {
+        actionMiniIndex.value = 1
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // 添加平滑滚动效果
+        });
     }
 }
 
@@ -267,6 +347,12 @@ onMounted(() => {
                                         }
                                     }
                                 }
+
+                                @media (max-height: 786px) {
+                                    .top-container {
+                                        height: 100%;
+                                    }
+                                }
                             }
 
                             &>.bottom {
@@ -352,6 +438,203 @@ onMounted(() => {
                             @media (max-width: 1366px) {
                                 &>.bottom {
                                     padding: initial;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                @media (max-width: 1024px) {
+                    .first {
+                        display: none;
+                    }
+                }
+
+                .first-m {
+                    display: none;
+                    width: 100%;
+
+                    .bottom {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        padding-top: 40px;
+
+                        .main {
+                            font-size: 18px;
+                            color: #333;
+                        }
+
+                        .no-main {
+                            font-size: 14px;
+                            color: #666;
+                        }
+
+                        .main-img {
+                            margin-top: 20px;
+                            width: 100%;
+                            display: flex;
+
+                            .one {
+                                display: flex;
+                                align-items: center;
+
+                                .rotate {
+                                    width: 40px;
+                                }
+
+
+                                p {
+                                    width: 80px;
+                                    font-size: 12px;
+                                    margin-left: 4px;
+                                    color: #18368b;
+                                }
+                            }
+                        }
+
+                        .lv {
+                            display: flex;
+                            align-items: center;
+                            margin-top: 30px;
+
+                            .img {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+                                img {
+                                    height: 15px;
+                                    width: auto;
+                                }
+                            }
+
+                            .content {
+                                margin-left: 20px;
+                                margin-top: 4px;
+                            }
+                        }
+
+                        .specifications,
+                        .price {
+                            margin-top: 20px;
+
+                            span {
+                                font-size: 16px;
+                                color: #333;
+                            }
+
+                            span:last-child {
+                                margin-left: 30px;
+                            }
+                        }
+
+                        .bottom-button {
+                            padding: 10px 0 20px;
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-bottom: 1px solid #e6e6e6;
+                        }
+                    }
+                }
+
+                @media (max-width: 1024px) {
+                    .first-m {
+                        display: block;
+                    }
+                }
+
+                .second {
+                    width: 100%;
+
+                    &-container {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        .info-title {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 20px;
+                            color: #12368a;
+                            padding-bottom: 10px;
+                            padding-top: 60px;
+                            border-bottom: 1px solid #e6e6e6;
+                            position: relative;
+
+                            &::before {
+                                content: "";
+                                width: 30px;
+                                height: 2px;
+                                background-color: #12368a;
+                                position: absolute;
+                                bottom: -1px;
+                                left: 50%;
+                                margin-left: -15px;
+                            }
+                        }
+
+                        .info {
+                            margin-top: 40px;
+
+                            p {
+                                text-align: center;
+                                color: #999 !important;
+                                font-size: 14px;
+                                margin-bottom: 12px;
+                            }
+
+                            .main {
+                                color: #999 !important;
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+                        }
+
+                        .other {
+                            width: 100%;
+                            padding-top: 60px;
+                            padding-bottom: 120px;
+                            display: flex;
+                            justify-content: center;
+
+                            .one {
+                                margin: 0 10px;
+                            }
+
+                            @media (max-width:1024px) {
+                                .one:last-child {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    @media (max-width: 1024px) {
+                        &-container {
+                            align-items: start;
+
+                            .info-title {
+                                justify-content: start;
+                                border-bottom: 0px solid #e6e6e6;
+                                padding-bottom: 0;
+                                color: #333;
+                                font-size: 18px;
+                                font-weight: bold;
+
+                                &::before {
+                                    display: none;
+                                }
+                            }
+
+                            .info {
+                                p {
+                                    text-align: left;
                                 }
                             }
                         }

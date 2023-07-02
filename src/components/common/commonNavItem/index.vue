@@ -78,8 +78,8 @@ onUnmounted(() => {
 const router = useRouter()
 const homeStore = useHomeStore()
 
-function pathPush() {
-    if (path.value) {
+function pathPush() { 
+    if (path.value && path.value !== '') {
         homeStore.setTargetView(path.value)
         router.push({
             path: path.value

@@ -65,7 +65,7 @@ export const commonNavItemProps = {
   path: {
     type: [String, Number] as PropType<string>,
     require: false,
-    default: '/',
+    default: '',
   },
   actived: {
     type: Boolean as PropType<Active>,

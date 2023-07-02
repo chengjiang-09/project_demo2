@@ -19,64 +19,64 @@ export const titleNav: TitleNav = [
       leftItems: [
         {
           title: {
-            text: '标题',
+            text: '商品',
             path: '',
           },
           datas: [
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
           ],
         },
         {
           title: {
-            text: '标题',
+            text: '商品',
             path: '',
           },
           datas: [
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/2',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/2',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/2',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/2',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/2',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/2',
             },
           ],
@@ -103,64 +103,64 @@ export const titleNav: TitleNav = [
       leftItems: [
         {
           title: {
-            text: '标题',
+            text: '商品',
             path: '',
           },
           datas: [
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
           ],
         },
         {
           title: {
-            text: '标题',
+            text: '商品',
             path: '',
           },
           datas: [
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
           ],
@@ -187,64 +187,64 @@ export const titleNav: TitleNav = [
       leftItems: [
         {
           title: {
-            text: '标题',
+            text: '商品',
             path: '',
           },
           datas: [
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
           ],
         },
         {
           title: {
-            text: '标题',
+            text: '商品',
             path: '',
           },
           datas: [
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
             {
-              text: '标题',
+              text: '商品',
               path: '/classify/1',
             },
           ],
@@ -264,8 +264,9 @@ export const titleNav: TitleNav = [
   },
   {
     navItem: {
-      baseTitle: '美护',
+      baseTitle: '洗护',
       outBodyActived: false,
+      path: 'washCare',
     },
     itemDatas: {
       leftItems: [],
